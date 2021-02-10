@@ -69,7 +69,7 @@ async function main() {
           {" "}
           {/* place ConnectedRouter under Provider */}
           <Authenticate />
-          {/* < App /> */}
+         {/* < App /> */}
         </ConnectedRouter>
       </Provider>
       ,

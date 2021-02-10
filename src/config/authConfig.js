@@ -1,11 +1,12 @@
 import { LogLevel } from "@azure/msal-browser";
+// clientId: "77268223-baba-45af-bd7e-aca98af5177a",
 
 // Config object to be passed to Msal on creation
 export const msalConfig = {
     auth: {
-        clientId: "d1fbb8f3-444f-467e-93ff-7272a56df4c7",
+        clientId: "2c81136f-a43b-43c7-acd7-f1ebd851b839",
         authority: 'https://login.microsoftonline.com/b4b87e8f-df64-41ff-9ba4-a4930ebc804b', // This is your tenant info
-        redirectUri: 'https://moto',
+        redirectUri: 'https://eng',
     },
     system: {
         loggerOptions: {
@@ -38,7 +39,7 @@ export const msalConfig = {
 export const loginRequest = {
     scopes: [
         'User.Read',
-        'Mail.Send',
+        // 'Mail.Send',
       ]
 };
 /*

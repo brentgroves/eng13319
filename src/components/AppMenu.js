@@ -35,8 +35,8 @@ export default function AppMenu({
   const handleBuyer = () => {
     setAnchorEl(null);
     // alert(`Buyer App`);
-    Push('/prod');   
-    // window.location.href = 'http://google.com/';  
+    // Push('/prod');   
+    window.location.href = 'http://tooling/';  
     //    Push('/oee');
   };
   const handleProd = () => {
@@ -47,6 +47,12 @@ export default function AppMenu({
     setAnchorEl(null);
     alert(`Supervisor App`);
   };
+
+  const handleSignout = () => {
+    Push('/');
+    msalInstance.logout();    
+  };
+  
 
   return (
     <React.Fragment>
@@ -68,6 +74,7 @@ export default function AppMenu({
         <MenuItem onClick={handleProd}>Prod</MenuItem>
         <MenuItem onClick={handleSuper}>Super</MenuItem>
         <MenuItem onClick={handleSuper}>ToolSetter</MenuItem>
+        <MenuItem onClick={handleSignout}>Sign Out</MenuItem>
       </Menu>
     </React.Fragment>
   );

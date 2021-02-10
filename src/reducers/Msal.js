@@ -4,7 +4,6 @@ import { msalConfig, loginRequest } from "../config/authConfig";
 
 const msalInstance = new PublicClientApplication(msalConfig);
 
-
 const initState = {
   msalInstance: msalInstance, 
   account:null,
