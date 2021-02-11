@@ -1,36 +1,28 @@
-import React from 'react';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import SpeedIcon from '@material-ui/icons/Speed';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
-import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
-import EmailIcon from '@material-ui/icons/Email';
+import React from "react";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import SpeedIcon from "@material-ui/icons/Speed";
+import ListItemText from "@material-ui/core/ListItemText";
+import Divider from "@material-ui/core/Divider";
+import AirplanemodeActiveIcon from "@material-ui/icons/AirplanemodeActive";
+import EmailIcon from "@material-ui/icons/Email";
 
-// PROBLEM WITH COLLAPSE SUB LIST AND FIREFOX
-// WAIT FOR NEW VERSION OF MATERIAL-UI WHICH HAS NESTE LIST-ITEM COMPONENT
 //https://v0.material-ui.com/#/components/list
 //https://medium.com/@ali.atwa/getting-started-with-material-ui-for-react-59c82d9ffd93
 
 export default function SideMenu(params) {
-  const {
-    Push,
-  } = params;
+  // eslint-disable-next-line
+  const { Push } = params;
 
   const handleToolLife = () => {
-    // Push('/Plant6Issues');
-    alert(`Plant 6 Issues`);
+    // Push('/toollife');
+    alert(`Tool Life Issues`);
   };
   const handleMachiningTimes = () => {
-    // Push('/Plant8Issues');
-    alert(`Plant 8 Issues`);
-  };
-  const handleIssuesPlant9 = () => {
-    // Push('/Plant9Issues');
-    alert(`Plant 9 Issues`);
+    // Push('/machining_times');
+    alert(`Machining times issues`);
   };
   const handleSubscribeEmail = () => {
     // Push('/SubscribeEmail');
@@ -67,7 +59,6 @@ export default function SideMenu(params) {
         </ListItemIcon>
         <ListItemText primary="Email" />
       </ListItem>
-
     </List>
   );
 }

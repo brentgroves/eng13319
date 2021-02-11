@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 // https://stackoverflow.com/questions/42914666/react-router-external-link
 export default function ExtRedirect({value}) {
     useEffect(() => {

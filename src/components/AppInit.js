@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
-
-import { App } from '../containers/App';
-import LinearIndeterminate from './LinearIndeterminate';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { makeStyles } from '@material-ui/core/styles';
-import { useMsal, useAccount } from '@azure/msal-react';
-import { loginRequest } from '../config/authConfig';
-import { callMsGraph, GetProfile } from '../api/graph';
+import React, { useEffect } from "react";
+import { App } from "../containers/App";
+import { makeStyles } from "@material-ui/core/styles";
+import { useMsal, useAccount } from "@azure/msal-react";
+import { loginRequest } from "../config/authConfig";
+import { callMsGraph, GetProfile } from "../api/graph";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    display: "flex",
   },
 }));
 
@@ -40,12 +36,11 @@ export default function AppInit({
           SetProfile(response.positions[0].detail);
           const department = response.positions[0].detail.company.department;
           SetDepartment(department);
-          Push('')
+          Push("");
         });
       });
+    // eslint-disable-next-line
   }, [account]);
-
-
 
   const classes = useStyles();
 

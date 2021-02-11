@@ -1,5 +1,3 @@
-import * as errorSeverity from '../constants/ErrorSeverity';
-import * as errorType from '../constants/ErrorType';
 import * as types from '../constants/ActionTypes';
 
 // Msal Reducer

@@ -1,23 +1,23 @@
-import * as types from '../constants/ActionTypes';
+import * as types from "../constants/ActionTypes";
 import { PublicClientApplication } from "@azure/msal-browser";
-import { msalConfig, loginRequest } from "../config/authConfig";
+import { msalConfig } from "../config/authConfig";
 
 const msalInstance = new PublicClientApplication(msalConfig);
 
 const initState = {
-  msalInstance: msalInstance, 
-  account:null,
-  graph:null,
-  profile:null,
-  jobTitle:null,
-  companyName:null,
-  officeLocation:null,
-  department:null,
-  username:null,
-  name:null,
-  givenName:null,
-  surName:null,
-  initials:null,
+  msalInstance: msalInstance,
+  account: null,
+  graph: null,
+  profile: null,
+  jobTitle: null,
+  companyName: null,
+  officeLocation: null,
+  department: null,
+  username: null,
+  name: null,
+  givenName: null,
+  surName: null,
+  initials: null,
 };
 
 const Msal = (state = initState, action) => {
@@ -43,7 +43,9 @@ const Msal = (state = initState, action) => {
         graph: action.graph,
         givenName: action.graph.givenName,
         surName: action.graph.surname,
-        initials: action.graph.givenName.substring(0, 1)+action.graph.surname.substring(0, 1),
+        initials:
+          action.graph.givenName.substring(0, 1) +
+          action.graph.surname.substring(0, 1),
       });
     }
     case types.SET_GROUPS: {
@@ -60,7 +62,6 @@ const Msal = (state = initState, action) => {
         department: action.profile.company.department,
         companyName: action.profile.company.displayName,
         officeLocation: action.profile.company.officeLocation,
-
       });
     }
     default:

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
 import { Provider } from "react-redux";
@@ -11,19 +11,14 @@ import { history } from "./store";
 import reducers from "./reducers";
 import setupServices from "./services";
 import rootSaga from "./sagas";
-import { Authenticate } from './containers/Authenticate';
-import { App } from './containers/App';
-
+import { Authenticate } from "./containers/Authenticate";
 
 import "./index.css";
-
-// import { Authenticate } from './containers/Authenticate';
 
 import reportWebVitals from "./reportWebVitals";
 
 async function main() {
   const sagaMiddleware = createSagaMiddleware();
-  // console.log(`process.env.NODE_ENV=${process.env.NODE_ENV}`);
 
   if (process.env.NODE_ENV === "production") {
     console.log("calling disableReactDevTools");
@@ -69,7 +64,7 @@ async function main() {
           {" "}
           {/* place ConnectedRouter under Provider */}
           <Authenticate />
-         {/* < App /> */}
+          {/* < App /> */}
         </ConnectedRouter>
       </Provider>
       ,

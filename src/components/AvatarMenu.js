@@ -1,20 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Avatar from "@material-ui/core/Avatar";
 
 import Badge from "@material-ui/core/Badge";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import IconButton from "@material-ui/core/IconButton";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { indigo} from "@material-ui/core/colors";
+import { indigo } from "@material-ui/core/colors";
 
 import Typography from "@material-ui/core/Typography";
 import Tooltip from "@material-ui/core/Tooltip";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-import {AvatarMenuCard} from '../containers/AvatarMenuCard';
+import { AvatarMenuCard } from "../containers/AvatarMenuCard";
 
 const HtmlTooltip = withStyles((theme) => ({
   tooltip: {
@@ -29,9 +26,8 @@ const HtmlTooltip = withStyles((theme) => ({
 const StyledMenu = withStyles({
   paper: {
     // border: '1px solid #d3d4d5',
-    border: '0px',
+    border: "0px",
   },
-
 })((props) => (
   <Menu
     elevation={0}
@@ -50,9 +46,9 @@ const StyledMenu = withStyles({
 
 const StyledMenuItem = withStyles((theme) => ({
   gutters: {
-    paddingLeft: '0px',
-    paddingRight: '0px'
-  },      
+    paddingLeft: "0px",
+    paddingRight: "0px",
+  },
 
   root: {
     "&:focus": {
@@ -60,7 +56,7 @@ const StyledMenuItem = withStyles((theme) => ({
       "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
         color: theme.palette.common.white,
       },
-      paddingTop: '0px',
+      paddingTop: "0px",
     },
   },
 }))(MenuItem);
@@ -70,13 +66,10 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(4),
     color: indigo[500],
     backgroundColor: theme.palette.common.white,
-    //    color: theme.palette.getContrastText(indigo[500]),
-    //    backgroundColor: indigo[500],
   },
 }));
 
-export default function AvatarMenu({ msalInstance, name, initials, companyName }) {
-  // common.log(`currentApp=${currentApp}`);
+export default function AvatarMenu({ name, initials, companyName }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const classes = useStyles();
 
@@ -86,10 +79,6 @@ export default function AvatarMenu({ msalInstance, name, initials, companyName }
 
   const handleClose = () => {
     setAnchorEl(null);
-  };
-  const handleSignout = () => {
-    setAnchorEl(null);
-    alert(`Signout`);
   };
 
   return (
@@ -125,7 +114,7 @@ export default function AvatarMenu({ msalInstance, name, initials, companyName }
       >
         <StyledMenuItem>
           {/* <ListItemIcon> */}
-          <AvatarMenuCard/>
+          <AvatarMenuCard />
 
           {/* </ListItemIcon> */}
         </StyledMenuItem>

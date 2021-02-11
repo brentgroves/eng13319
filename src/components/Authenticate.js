@@ -1,23 +1,12 @@
-import React, { useEffect } from 'react';
+import React from "react";
 
-import { AppInit } from '../containers/AppInit';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import Snackbar from '@material-ui/core/Snackbar';
-import { makeStyles } from '@material-ui/core/styles';
-import {
-  MsalProvider,
-  MsalAuthenticationTemplate,
-  UnauthenticatedTemplate,
-} from '@azure/msal-react';
-import { ErrorBoundary } from './ErrorBoundary.jsx';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-}));
+import { AppInit } from "../containers/AppInit";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import Snackbar from "@material-ui/core/Snackbar";
+import { MsalProvider, MsalAuthenticationTemplate } from "@azure/msal-react";
+import { ErrorBoundary } from "./ErrorBoundary.jsx";
 
 const InProgressComponent = ({ inProgress }) => {
   return <h5>{inProgress} In Progress</h5>;
@@ -42,15 +31,12 @@ export default function Authenticate({
   appError,
 }) {
   const handleCloseSnackBar = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
     ClearAppError();
-
-    //    setOpen(false);
   };
-  const classes = useStyles();
-  // const msalInstance = new PublicClientApplication(msalConfig);
+
   return (
     <MsalProvider instance={msalInstance}>
       <ErrorBoundary>
@@ -59,13 +45,11 @@ export default function Authenticate({
           loadingComponent={InProgressComponent}
           errorComponent={ErrorComponent}
         >
-          {/* <ProfileContent /> */}
           <AppInit />
-          {/* <h1>AppSwitch1</h1> */}
           <Snackbar
             anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'center',
+              vertical: "bottom",
+              horizontal: "center",
             }}
             open={appError.error}
             autoHideDuration={6000}

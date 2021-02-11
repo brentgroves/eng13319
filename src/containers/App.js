@@ -1,15 +1,13 @@
-import { connect } from 'react-redux';
-import AppComponent from '../components/App';
-
-import * as actions from '../actions';
+import { connect } from "react-redux";
+import AppComponent from "../components/App";
 
 const mapDispatchToProps = (dispatch) => {
   return {
     // dispatching plain actions
-    AuthenticateSaga: (email, password, route, setSubmittingOff) =>
-      dispatch(
-        actions.AuthenticateSaga(email, password, route, setSubmittingOff),
-      ),
+    // AuthenticateSaga: (email, password, route, setSubmittingOff) =>
+    //   dispatch(
+    //     actions.AuthenticateSaga(email, password, route, setSubmittingOff),
+    //   ),
   };
 };
 
@@ -20,7 +18,4 @@ function mapStateToProps(state) {
   };
 }
 
-export const App = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(AppComponent);
+export const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent);

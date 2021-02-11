@@ -1,27 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 
 import Badge from "@material-ui/core/Badge";
 import AppsIcon from "@material-ui/icons/Apps";
 import IconButton from "@material-ui/core/IconButton";
-import * as AppId from "../constants/AppId";
-import * as AppSet from "../constants/AppSet";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import * as common from "@bgroves/common";
-import { SetAccount } from "../actions";
-import * as errorType from "../constants/ErrorType";
-import * as errorSeverity from "../constants/ErrorSeverity";
+// import * as common from "@bgroves/common";
 
 export default function AppMenu({
-  isAuthenticated,
   msalInstance,
   Push,
-  currentApp,
-  SetCurrentApp,
-  SetAppError,
-  appSet,
-  Logout,
 }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -32,27 +21,36 @@ export default function AppMenu({
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleBuyer = () => {
+  const handleTooling = () => {
     setAnchorEl(null);
-    // alert(`Buyer App`);
-    // Push('/prod');   
+    // Push('/tooling');   Can't get external URL to work with router
     window.location.href = 'http://tooling/';  
-    //    Push('/oee');
   };
+  // const handleEng = () => {
+  //   setAnchorEl(null);
+  //   // Push('/tooling');   Can't get external URL to work with router
+  //   window.location.href = 'http://eng/';  
+  // };
   const handleProd = () => {
     setAnchorEl(null);
-    alert(`Production App`);
+    // Push('/tooling');   Can't get external URL to work with router
+    window.location.href = 'http://prod/';  
   };
   const handleSuper = () => {
     setAnchorEl(null);
-    alert(`Supervisor App`);
+    // Push('/tooling');   Can't get external URL to work with router
+    window.location.href = 'http://super/';  
   };
-
+  const handleGM = () => {
+    setAnchorEl(null);
+    // Push('/tooling');   Can't get external URL to work with router
+    window.location.href = 'http://gm/';  
+  };
   const handleSignout = () => {
     Push('/');
     msalInstance.logout();    
   };
-  
+
 
   return (
     <React.Fragment>
@@ -70,10 +68,11 @@ export default function AppMenu({
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleBuyer}>Buyer</MenuItem>
+        <MenuItem onClick={handleTooling}>Tooling</MenuItem>
+        {/* <MenuItem onClick={handleEng}>Eng</MenuItem> */}
         <MenuItem onClick={handleProd}>Prod</MenuItem>
         <MenuItem onClick={handleSuper}>Super</MenuItem>
-        <MenuItem onClick={handleSuper}>ToolSetter</MenuItem>
+        <MenuItem onClick={handleGM}>GM</MenuItem>
         <MenuItem onClick={handleSignout}>Sign Out</MenuItem>
       </Menu>
     </React.Fragment>

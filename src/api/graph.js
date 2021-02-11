@@ -1,4 +1,3 @@
-import React from "react";
 import { graphConfig } from "../config/authConfig";
 
 export async function callMsGraph(accessToken) {

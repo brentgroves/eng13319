@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, useRouteMatch, Redirect } from "react-router-dom";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -120,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function App({ AuthenticateSaga }) {
+export default function App() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -128,11 +128,6 @@ export default function App({ AuthenticateSaga }) {
   };
   const handleDrawerClose = () => {
     setOpen(false);
-  };
-
-  const handleTest = (event, reason) => {
-    console.log(`In handleTest`);
-    AuthenticateSaga("user@buschegroup.com", "password", "/tracker", false);
   };
 
   let match = useRouteMatch();
@@ -196,10 +191,10 @@ export default function App({ AuthenticateSaga }) {
             {/* <Route path={match.path}>
               <Dashboard />
             </Route> */}
-            <Route path="/prod" >
-              <ExtRedirect value='http://google.com/' />
+            <Route path="/prod">
+              <ExtRedirect value="http://google.com/" />
             </Route>
-            <Route path={'/'}>
+            <Route path={"/"}>
               <Dashboard />
             </Route>
             {/* <Route path={`${match.path}/privacy-policy`}>
