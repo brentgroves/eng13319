@@ -8,10 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import CssBaseline from "@material-ui/core/CssBaseline";
 // import * as common from "@bgroves/common";
 
-export default function AppMenu({
-  msalInstance,
-  Push,
-}) {
+export default function AppMenu({ msalInstance, Push }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -24,29 +21,36 @@ export default function AppMenu({
   const handleTooling = () => {
     setAnchorEl(null);
     // Push('/tooling');   Can't get external URL to work with router
-    window.location.href = 'http://tooling/';  
+    window.location.href = "http://tooling/";
   };
   // const handleEng = () => {
   //   setAnchorEl(null);
   //   // Push('/tooling');   Can't get external URL to work with router
-  //   window.location.href = 'http://eng/';  
+  //   window.location.href = 'http://eng/';
   // };
   const handleProd = () => {
     setAnchorEl(null);
     // Push('/tooling');   Can't get external URL to work with router
-    window.location.href = 'http://prod/';  
+    window.location.href = "http://prod/";
   };
   const handleGM = () => {
     setAnchorEl(null);
     // Push('/tooling');   Can't get external URL to work with router
-    window.location.href = 'http://gm/';  
-  //  https://buschecnc.sharepoint.com/sites/Engineering/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FEngineering%2FShared%20Documents%2FIssues%2FTest221538&p=true&originalPath=aHR0cHM6Ly9idXNjaGVjbmMuc2hhcmVwb2ludC5jb20vOmY6L3MvRW5naW5lZXJpbmcvRWhFa0RldXg0M3RLdDVrdHZFWXJfZWtCNFVLZ0FTVWRaLXNwaXJaVy0xSGJwdz9ydGltZT1PVFN3NVJfWTJFZw    
+    window.location.href = "http://gm/";
+    // https://buschecnc.sharepoint.com/:f:/s/Engineering/EhEkDeux43tKt5ktvEYr_ekB4UKgASUdZ-spirZW-1Hbpw
+  };
+  const handleIssueTest = () => {
+    setAnchorEl(null);
+    // Push('/tooling');   Can't get external URL to work with router
+    window.open(
+      "https://buschecnc.sharepoint.com/:f:/s/Engineering/EhEkDeux43tKt5ktvEYr_ekB4UKgASUdZ-spirZW-1Hbpw",
+      "_blank"
+    );
   };
   const handleSignout = () => {
-    Push('/');
-    msalInstance.logout();    
+    Push("/");
+    msalInstance.logout();
   };
-
 
   return (
     <React.Fragment>
@@ -68,6 +72,7 @@ export default function AppMenu({
         {/* <MenuItem onClick={handleEng}>Eng</MenuItem> */}
         <MenuItem onClick={handleProd}>Prod</MenuItem>
         <MenuItem onClick={handleGM}>GM</MenuItem>
+        <MenuItem onClick={handleIssueTest}>Issue</MenuItem>
         <MenuItem onClick={handleSignout}>Sign Out</MenuItem>
       </Menu>
     </React.Fragment>
