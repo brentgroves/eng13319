@@ -2,6 +2,7 @@ import { LogLevel } from "@azure/msal-browser";
 // clientId: "77268223-baba-45af-bd7e-aca98af5177a",
 
 // Config object to be passed to Msal on creation
+// JesusLives1! client secret: GV8-G2oClv0s_-pWJd6J~6Fx4f_ENI~2hu
 export const msalConfig = {
   auth: {
     clientId: "2c81136f-a43b-43c7-acd7-f1ebd851b839",
