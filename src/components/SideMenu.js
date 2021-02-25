@@ -8,6 +8,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import AirplanemodeActiveIcon from "@material-ui/icons/AirplanemodeActive";
 import EmailIcon from "@material-ui/icons/Email";
+import AssignmentIcon from '@material-ui/icons/Assignment';
 
 //https://v0.material-ui.com/#/components/list
 //https://medium.com/@ali.atwa/getting-started-with-material-ui-for-react-59c82d9ffd93
@@ -28,6 +29,14 @@ export default function SideMenu(params) {
     // Push('/SubscribeEmail');
     alert(`SubscribeEmail`);
   };
+  const handleTasks = () => {
+    // Push('/machining_times');
+    window.open(
+      "https://tasks.office.com/busche-cnc.com/en-US/Home/Planner/",
+      "_blank"
+    );
+  };
+
   return (
     <List>
       <ListSubheader>Issues</ListSubheader>
@@ -58,6 +67,15 @@ export default function SideMenu(params) {
           <EmailIcon />
         </ListItemIcon>
         <ListItemText primary="Email" />
+      </ListItem>
+      <Divider />
+      <ListSubheader>Planner</ListSubheader>
+      <Divider />
+      <ListItem button onClick={handleTasks}>
+        <ListItemIcon>
+          <AssignmentIcon />
+        </ListItemIcon>
+        <ListItemText primary="Tasks" />
       </ListItem>
     </List>
   );
